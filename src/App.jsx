@@ -3,8 +3,8 @@ import TwitterFollowCard from './TwitterFollowCard'
 
 const users = [
  {
-  userName: 'victorvzn',
-  name: 'Victor Villasón Sosa',
+  userName: '@FaztTech',
+  name: 'Programador',
   isFollowing: false,
  },
  {
@@ -14,7 +14,7 @@ const users = [
  },
  {
   userName: 'cineplanet',
-  name: 'Cine Planet',
+  name: 'Cineplanet Perú',
   isFollowing: true,
  },
  {
