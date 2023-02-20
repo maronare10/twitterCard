@@ -1,6 +1,17 @@
-import React, { Children } from 'react'
+import {useState} from 'react'
 
-const TwitterFollowCard = ({ children, userName, isFollowing }) => {
+const TwitterFollowCard = ({ children, userName }) => {
+  const [isFollowing, setIsFollowing] = useState(false)
+
+  const text = isFollowing ? 'Siguiendo' : 'Seguir'
+  const buttonClassName = isFollowing
+    ? 'tw-followCard-button is-following'
+    : 'tw-followCard-button'
+
+    const handleClick = () => {
+      setIsFollowing(!isFollowing)
+    }
+
   return (
     <article className='tw-followCard'> {/* <article style={{ display: 'flex', alignItems: 'center', color: '#fff' }}> ojo: Los estilos van como un objeto y con nomenclatura camelCase, pero de preferencia no colocar estilos aquí */}
       <header className='tw-followCard-header'>
@@ -15,8 +26,8 @@ const TwitterFollowCard = ({ children, userName, isFollowing }) => {
       </header>
 
       <aside>
-        <button className='tw-followCard-button'>
-          Seguir
+        <button className={buttonClassName} onClick={handleClick}>
+          {text}
         </button>
       </aside>
     </article>
